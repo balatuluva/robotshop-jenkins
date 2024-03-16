@@ -21,9 +21,9 @@ def call() {
                     sh 'terraform init -backend-config=env-${env}/state.tfvars'
                 }
             }
-            stage('Terraform Apply') {
+            stage('Terraform DESTROY') {
                 steps {
-                    sh 'terraform apply -auto-approve -var-file=env-${env}/main.tfvars'
+                    sh 'terraform destroy -auto-approve -var-file=env-${env}/main.tfvars'
                 }
             }
         }

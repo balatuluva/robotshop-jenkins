@@ -35,6 +35,12 @@ def call() {
                     sh 'echo Checkmarx SCA Scan'
                 }
             }
+            stage('Release Application') {
+                steps {
+                    sh 'env'
+                    sh 'echo Release Application'
+                }
+            }
         }
 
         post {
